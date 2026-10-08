@@ -1,0 +1,219 @@
+{
+  "desafios": {
+    "javascript": {
+      "iniciante": [
+        {
+          "titulo": "Calculadora de IMC",
+          "descricao": "Crie uma função que receba peso (kg) e altura (m) e retorne o IMC calculado junto com a classificação (Abaixo do peso, Normal, Sobrepeso, Obesidade).",
+          "exemplo_entrada": "calcularIMC(70, 1.75)",
+          "exemplo_saida": "{ imc: 22.86, classificacao: 'Normal' }",
+          "dica": "IMC = peso / (altura * altura). Use if/else para classificar."
+        },
+        {
+          "titulo": "Inversor de String",
+          "descricao": "Escreva uma função que receba uma string e retorne ela invertida, sem usar o método reverse() diretamente.",
+          "exemplo_entrada": "inverterString('hello')",
+          "exemplo_saida": "'olleh'",
+          "dica": "Use um laço for percorrendo a string de trás para frente."
+        },
+        {
+          "titulo": "Verificador de Palíndromo",
+          "descricao": "Crie uma função que verifique se uma palavra é um palíndromo (lida igual de frente e de trás), ignorando maiúsculas e espaços.",
+          "exemplo_entrada": "ehPalindromo('Arara')",
+          "exemplo_saida": "true",
+          "dica": "Normalize a string para minúsculas, remova espaços e compare com a versão invertida."
+        }
+      ],
+      "intermediario": [
+        {
+          "titulo": "Agrupador de Anagramas",
+          "descricao": "Dada uma lista de palavras, agrupe os anagramas juntos. Palavras são anagramas se possuem as mesmas letras em ordem diferente.",
+          "exemplo_entrada": "agruparAnagramas(['eat', 'tea', 'tan', 'ate', 'nat', 'bat'])",
+          "exemplo_saida": "[['eat','tea','ate'], ['tan','nat'], ['bat']]",
+          "dica": "Ordene as letras de cada palavra para usar como chave de agrupamento em um Map."
+        },
+        {
+          "titulo": "Debounce",
+          "descricao": "Implemente uma função debounce que receba uma função e um delay em ms. Ela deve chamar a função original apenas após o delay ter passado sem novas chamadas.",
+          "exemplo_entrada": "const fn = debounce(() => console.log('executou'), 300)",
+          "exemplo_saida": "// fn chamada 5 vezes em 200ms -> executa apenas 1 vez após 300ms",
+          "dica": "Use setTimeout e clearTimeout. A cada nova chamada, limpe o timer anterior."
+        },
+        {
+          "titulo": "Pipeline de Funções",
+          "descricao": "Crie uma função pipe que receba múltiplas funções e retorne uma nova função que aplica todas elas em sequência, passando o resultado de uma para a próxima.",
+          "exemplo_entrada": "const transform = pipe(x => x * 2, x => x + 1, x => x ** 2)\ntransform(3)",
+          "exemplo_saida": "49",
+          "dica": "Use Array.reduce para compor as funções, passando o valor acumulado a cada iteração."
+        }
+      ],
+      "avancado": [
+        {
+          "titulo": "Event Emitter Customizado",
+          "descricao": "Implemente uma classe EventEmitter do zero com os métodos on (registrar listener), off (remover listener) e emit (disparar evento com dados).",
+          "exemplo_entrada": "const emitter = new EventEmitter()\nemitter.on('dados', (d) => console.log(d))\nemitter.emit('dados', { id: 1 })",
+          "exemplo_saida": "{ id: 1 }",
+          "dica": "Use um Map onde as chaves são os nomes dos eventos e os valores são arrays de callbacks."
+        },
+        {
+          "titulo": "Promisify",
+          "descricao": "Crie uma função promisify que converta uma função baseada em callbacks no estilo Node.js (err, result) para uma versão que retorna Promise.",
+          "exemplo_entrada": "const readFile = promisify(fs.readFile)\nawait readFile('file.txt', 'utf8')",
+          "exemplo_saida": "// Conteúdo do arquivo como string",
+          "dica": "Retorne uma função que, quando chamada, cria uma Promise e usa o callback para resolver ou rejeitar."
+        }
+      ]
+    },
+    "python": {
+      "iniciante": [
+        {
+          "titulo": "Contador de Palavras",
+          "descricao": "Escreva uma função que receba um texto e retorne um dicionário com a frequência de cada palavra, ignorando maiúsculas e pontuação.",
+          "exemplo_entrada": "contar_palavras('Olá mundo olá Python')",
+          "exemplo_saida": "{'olá': 2, 'mundo': 1, 'python': 1}",
+          "dica": "Use .lower() e .split() para normalizar. Itere sobre as palavras e use o dicionário como contador."
+        },
+        {
+          "titulo": "Números Perfeitos",
+          "descricao": "Um número perfeito é aquele cuja soma de seus divisores próprios é igual a ele mesmo. Crie uma função que receba um limite e retorne todos os números perfeitos até esse limite.",
+          "exemplo_entrada": "numeros_perfeitos(1000)",
+          "exemplo_saida": "[6, 28, 496]",
+          "dica": "Para cada número, calcule a soma dos divisores (números de 1 até n-1 que dividem n exatamente)."
+        }
+      ],
+      "intermediario": [
+        {
+          "titulo": "Decorador de Cache (Memoize)",
+          "descricao": "Implemente um decorador @memoize que armazene em cache os resultados de funções com base nos argumentos. Teste com a sequência de Fibonacci.",
+          "exemplo_entrada": "@memoize\ndef fib(n):\n    return n if n <= 1 else fib(n-1) + fib(n-2)",
+          "exemplo_saida": "fib(35)  # Executa instantaneamente após o cache",
+          "dica": "Use functools.wraps e um dicionário para armazenar os resultados. Use args como chave do cache."
+        },
+        {
+          "titulo": "Gerador de Relatório CSV",
+          "descricao": "Crie uma classe RelatorioProdutos que leia um CSV com colunas (nome, preco, quantidade), calcule o valor total do estoque e exporte um resumo.",
+          "exemplo_entrada": "r = RelatorioProdutos('produtos.csv')\nr.gerar_resumo()",
+          "exemplo_saida": "# Arquivo resumo.txt com total de produtos e valor total do estoque",
+          "dica": "Use o módulo csv para leitura. Calcule preco * quantidade para cada item e some tudo."
+        }
+      ],
+      "avancado": [
+        {
+          "titulo": "Mini ORM",
+          "descricao": "Crie um mini ORM usando Python puro com sqlite3. Implemente uma classe base Model com métodos save(), find_by_id() e all(), usando metaclasses para mapear atributos da classe para colunas do banco.",
+          "exemplo_entrada": "class Usuario(Model):\n    nome = Column(str)\n    email = Column(str)\n\nu = Usuario(nome='Ana', email='ana@email.com')\nu.save()",
+          "exemplo_saida": "# Registro inserido no SQLite automaticamente",
+          "dica": "Use __init_subclass__ ou uma metaclasse para inspecionar os atributos e criar a tabela dinamicamente."
+        }
+      ]
+    },
+    "react": {
+      "iniciante": [
+        {
+          "titulo": "Lista de Tarefas (To-Do)",
+          "descricao": "Crie um componente TodoApp com input para adicionar tarefas, lista de tarefas com checkbox para marcar como concluída e botão para remover tarefas concluídas.",
+          "exemplo_entrada": "// Usuário digita 'Estudar React' e pressiona Enter",
+          "exemplo_saida": "// Tarefa aparece na lista. Ao marcar checkbox, texto fica riscado.",
+          "dica": "Use useState para a lista de tarefas e para o texto do input. Cada tarefa deve ser um objeto com id, texto e concluida."
+        },
+        {
+          "titulo": "Galeria de Cards com Filtro",
+          "descricao": "Crie uma galeria de cards de filmes (dados mockados) com botões de filtro por gênero. Ao clicar no filtro, apenas os filmes daquele gênero são exibidos.",
+          "exemplo_entrada": "// Usuário clica em 'Ação'",
+          "exemplo_saida": "// Apenas filmes de ação aparecem na tela",
+          "dica": "Use useState para o filtro ativo. Use .filter() no array de filmes baseado no gênero selecionado."
+        }
+      ],
+      "intermediario": [
+        {
+          "titulo": "Hook Personalizado: useFetch",
+          "descricao": "Crie um custom hook useFetch que receba uma URL, faça a requisição, e retorne { data, loading, error }. Deve cancelar requisições quando o componente desmontar.",
+          "exemplo_entrada": "const { data, loading, error } = useFetch('https://api.exemplo.com/users')",
+          "exemplo_saida": "// loading: true enquanto carrega, data: [...] ao concluir, error: se falhar",
+          "dica": "Use useEffect com AbortController para cancelamento. useState para controlar os três estados."
+        },
+        {
+          "titulo": "Formulário Multi-Etapas",
+          "descricao": "Crie um formulário de cadastro com 3 etapas: (1) dados pessoais, (2) endereço, (3) revisão. Com botões 'Próximo' e 'Voltar' e barra de progresso.",
+          "exemplo_entrada": "// Usuário preenche etapa 1 e clica em 'Próximo'",
+          "exemplo_saida": "// Avança para etapa 2. Barra de progresso mostra 33% -> 66% -> 100%",
+          "dica": "Use useState para a etapa atual e para os dados de cada formulário. Valide antes de avançar."
+        }
+      ],
+      "avancado": [
+        {
+          "titulo": "Kanban Board com Drag and Drop",
+          "descricao": "Implemente um quadro Kanban com colunas (A Fazer, Em Progresso, Concluído) onde cards podem ser arrastados entre colunas usando a API nativa de Drag and Drop do HTML5.",
+          "exemplo_entrada": "// Usuário arrasta card 'Tarefa 1' para 'Em Progresso'",
+          "exemplo_saida": "// Card é movido para a coluna correta. Estado atualizado.",
+          "dica": "Use onDragStart para guardar o id do card, onDragOver para permitir drop e onDrop para mover o card entre colunas no estado."
+        }
+      ]
+    },
+    "node": {
+      "iniciante": [
+        {
+          "titulo": "API de Notas",
+          "descricao": "Crie uma API REST com Express que gerencie notas (título e conteúdo). Implemente rotas GET /notas, POST /notas, PUT /notas/:id e DELETE /notas/:id com dados em memória.",
+          "exemplo_entrada": "POST /notas { titulo: 'Reunião', conteudo: '14h amanhã' }",
+          "exemplo_saida": "{ id: '1', titulo: 'Reunião', conteudo: '14h amanhã', criadoEm: '...' }",
+          "dica": "Use um array em memória como banco. Gere IDs com Date.now() ou uuid. Use express.json() como middleware."
+        }
+      ],
+      "intermediario": [
+        {
+          "titulo": "Autenticação JWT Completa",
+          "descricao": "Adicione autenticação à API de Notas: rota de registro, login que retorna JWT, e middleware que protege as rotas de notas. Use bcrypt para hash de senhas.",
+          "exemplo_entrada": "POST /auth/login { email: 'user@test.com', senha: '123456' }",
+          "exemplo_saida": "{ token: 'eyJhbGci...' }",
+          "dica": "Use jsonwebtoken para assinar e verificar tokens. O middleware deve extrair o token do header Authorization."
+        },
+        {
+          "titulo": "Worker com Filas",
+          "descricao": "Crie um sistema de envio de e-mails fake usando Bull (fila com Redis). A rota POST /emails adiciona à fila e um worker processa, logando o e-mail enviado após 2s de delay.",
+          "exemplo_entrada": "POST /emails { para: 'user@test.com', assunto: 'Bem-vindo!' }",
+          "exemplo_saida": "{ status: 'enfileirado', jobId: '42' } // Worker loga após 2s",
+          "dica": "Configure uma Queue com Bull, adicione jobs na rota e processe com queue.process()."
+        }
+      ],
+      "avancado": [
+        {
+          "titulo": "API GraphQL com Subscriptions",
+          "descricao": "Crie uma API GraphQL com Apollo Server que tenha queries para listar usuários, mutations para criar usuários e subscriptions para notificar em tempo real quando um usuário é criado.",
+          "exemplo_entrada": "mutation { criarUsuario(nome: 'Ana') { id nome } }",
+          "exemplo_saida": "// Todos os clientes inscritos na subscription recebem o novo usuário",
+          "dica": "Use PubSub do Apollo para publicar eventos. Subscriptions usam WebSocket."
+        }
+      ]
+    },
+    "devops": {
+      "iniciante": [
+        {
+          "titulo": "Containerizar uma Aplicação",
+          "descricao": "Crie um Dockerfile para uma aplicação Node.js Express simples, otimizando para produção. Use multi-stage build, usuário não-root e .dockerignore adequado.",
+          "exemplo_entrada": "docker build -t minha-app . && docker run -p 3000:3000 minha-app",
+          "exemplo_saida": "// Aplicação acessível em localhost:3000 com imagem otimizada < 150MB",
+          "dica": "Use a imagem base node:alpine. No estágio final, copie apenas o necessário e defina USER node."
+        }
+      ],
+      "intermediario": [
+        {
+          "titulo": "Pipeline CI/CD com GitHub Actions",
+          "descricao": "Crie um workflow no GitHub Actions que: (1) rode testes em push para qualquer branch, (2) faça build e push da imagem Docker no merge para main, (3) faça deploy automático no Railway.",
+          "exemplo_entrada": "# .github/workflows/ci-cd.yml",
+          "exemplo_saida": "// Pipeline verde com testes, build e deploy em < 5 minutos",
+          "dica": "Use jobs separados com needs para encadear etapas. Use secrets do GitHub para credenciais."
+        }
+      ],
+      "avancado": [
+        {
+          "titulo": "Cluster Kubernetes Local",
+          "descricao": "Configure um cluster Kubernetes local com k3d. Faça deploy de uma aplicação com Deployment (3 réplicas), Service, Ingress e HorizontalPodAutoscaler configurado para CPU > 50%.",
+          "exemplo_entrada": "kubectl apply -f k8s/ && kubectl get all -n minha-app",
+          "exemplo_saida": "// Todos os recursos Running. HPA escala quando CPU sobe.",
+          "dica": "Use k3d para criar o cluster localmente. Instale metrics-server para o HPA funcionar."
+        }
+      ]
+    }
+  }
+}

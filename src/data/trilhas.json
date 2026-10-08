@@ -1,0 +1,204 @@
+{
+  "trilhas": [
+    {
+      "id": "javascript",
+      "nome": "JavaScript",
+      "descricao": "Aprenda JavaScript do zero ao avançado, cobrindo ES6+, assincronismo e ecossistema moderno.",
+      "niveis": {
+        "iniciante": {
+          "duracao": "4 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Fundamentos de JavaScript", "topicos": ["Variáveis e tipos de dados", "Operadores", "Estruturas condicionais", "Laços de repetição"] },
+            { "numero": 2, "titulo": "Funções e Escopo", "topicos": ["Declaração de funções", "Arrow functions", "Escopo e closures", "Hoisting"] },
+            { "numero": 3, "titulo": "Arrays e Objetos", "topicos": ["Manipulação de arrays", "Métodos de array (map, filter, reduce)", "Objetos literais", "Desestruturação"] },
+            { "numero": 4, "titulo": "DOM e Eventos", "topicos": ["Seleção de elementos", "Manipulação do DOM", "Eventos e listeners", "Formulários"] }
+          ]
+        },
+        "intermediario": {
+          "duracao": "6 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "ES6+ e Módulos", "topicos": ["Classes", "Módulos ES6", "Spread/Rest", "Optional chaining"] },
+            { "numero": 2, "titulo": "Assincronismo", "topicos": ["Callbacks", "Promises", "Async/Await", "Fetch API"] },
+            { "numero": 3, "titulo": "Manipulação Avançada", "topicos": ["Prototype e herança", "Iteradores e geradores", "Proxy e Reflect", "WeakMap e WeakSet"] },
+            { "numero": 4, "titulo": "Testes com Jest", "topicos": ["Configuração do Jest", "Testes unitários", "Mocks e spies", "Cobertura de testes"] },
+            { "numero": 5, "titulo": "Tooling Moderno", "topicos": ["npm/yarn", "Webpack/Vite", "ESLint e Prettier", "Babel"] },
+            { "numero": 6, "titulo": "Projeto Integrador", "topicos": ["Projeto prático completo", "Code review", "Deploy básico"] }
+          ]
+        },
+        "avancado": {
+          "duracao": "8 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Padrões de Projeto", "topicos": ["Design Patterns em JS", "Observer, Factory, Singleton", "SOLID principles"] },
+            { "numero": 2, "titulo": "Performance e Otimização", "topicos": ["Profiling de código", "Lazy loading", "Web Workers", "Memory leaks"] },
+            { "numero": 3, "titulo": "Arquitetura Frontend", "topicos": ["Monorepos", "Micro-frontends", "State management", "Module federation"] },
+            { "numero": 4, "titulo": "Node.js Avançado", "topicos": ["Event loop aprofundado", "Streams", "Cluster e Worker Threads", "Performance tuning"] },
+            { "numero": 5, "titulo": "Segurança", "topicos": ["XSS e CSRF", "Content Security Policy", "Sanitização de dados", "OWASP top 10"] },
+            { "numero": 6, "titulo": "TypeScript Avançado", "topicos": ["Tipos genéricos", "Decorators", "Type utilities", "Conditional types"] },
+            { "numero": 7, "titulo": "Testes Avançados", "topicos": ["TDD na prática", "E2E com Cypress", "Testing Library", "Contract testing"] },
+            { "numero": 8, "titulo": "Projeto Final", "topicos": ["Aplicação full-stack", "CI/CD", "Monitoramento", "Apresentação"] }
+          ]
+        }
+      }
+    },
+    {
+      "id": "python",
+      "nome": "Python",
+      "descricao": "Domine Python desde a sintaxe básica até aplicações de ciência de dados e automação.",
+      "niveis": {
+        "iniciante": {
+          "duracao": "4 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Introdução ao Python", "topicos": ["Instalação e ambiente", "Tipos de dados", "Variáveis e operadores", "Input/Output"] },
+            { "numero": 2, "titulo": "Estruturas de Controle", "topicos": ["if/elif/else", "for e while", "break e continue", "Compreensão de lista"] },
+            { "numero": 3, "titulo": "Estruturas de Dados", "topicos": ["Listas", "Tuplas", "Dicionários", "Conjuntos (sets)"] },
+            { "numero": 4, "titulo": "Funções e Módulos", "topicos": ["Definição de funções", "Parâmetros e retorno", "Módulos padrão", "pip e pacotes"] }
+          ]
+        },
+        "intermediario": {
+          "duracao": "6 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Orientação a Objetos", "topicos": ["Classes e objetos", "Herança e polimorfismo", "Encapsulamento", "Métodos especiais (dunder)"] },
+            { "numero": 2, "titulo": "Tratamento de Erros e Arquivos", "topicos": ["Exceções", "Try/except/finally", "Leitura e escrita de arquivos", "JSON e CSV"] },
+            { "numero": 3, "titulo": "Bibliotecas Essenciais", "topicos": ["requests", "datetime", "pathlib", "collections"] },
+            { "numero": 4, "titulo": "Testes com pytest", "topicos": ["Configuração do pytest", "Fixtures", "Parametrize", "Cobertura"] },
+            { "numero": 5, "titulo": "Banco de Dados", "topicos": ["SQLite com sqlite3", "SQLAlchemy básico", "Migrações", "Consultas complexas"] },
+            { "numero": 6, "titulo": "APIs com FastAPI", "topicos": ["Criação de endpoints", "Validação com Pydantic", "Autenticação JWT", "Documentação automática"] }
+          ]
+        },
+        "avancado": {
+          "duracao": "8 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Ciência de Dados", "topicos": ["NumPy", "Pandas", "Visualização com Matplotlib/Seaborn", "Análise exploratória"] },
+            { "numero": 2, "titulo": "Machine Learning", "topicos": ["Scikit-learn", "Regressão e classificação", "Avaliação de modelos", "Pipelines"] },
+            { "numero": 3, "titulo": "Concorrência", "topicos": ["threading", "multiprocessing", "asyncio", "Celery"] },
+            { "numero": 4, "titulo": "Arquitetura de Software", "topicos": ["Clean Architecture", "DDD básico", "Padrões de projeto em Python", "SOLID"] },
+            { "numero": 5, "titulo": "DevOps com Python", "topicos": ["Docker com Python", "CI/CD", "Monitoramento", "Logging avançado"] },
+            { "numero": 6, "titulo": "Segurança", "topicos": ["Criptografia com cryptography", "JWT e OAuth2", "SQL Injection prevention", "Secrets management"] },
+            { "numero": 7, "titulo": "Performance", "topicos": ["Profiling com cProfile", "Cython básico", "Otimização de consultas", "Caching com Redis"] },
+            { "numero": 8, "titulo": "Projeto Final", "topicos": ["Aplicação completa", "Deploy em nuvem", "Documentação", "Apresentação"] }
+          ]
+        }
+      }
+    },
+    {
+      "id": "react",
+      "nome": "React",
+      "descricao": "Crie interfaces modernas e componentizadas com React, Hooks e o ecossistema JSX.",
+      "niveis": {
+        "iniciante": {
+          "duracao": "4 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Introdução ao React", "topicos": ["Create React App / Vite", "JSX", "Componentes funcionais", "Props"] },
+            { "numero": 2, "titulo": "Estado e Eventos", "topicos": ["useState", "Manipulação de eventos", "Formulários controlados", "Renderização condicional"] },
+            { "numero": 3, "titulo": "Listas e Componentes", "topicos": ["Renderização de listas", "keys", "Composição de componentes", "Fragmentos"] },
+            { "numero": 4, "titulo": "Estilização", "topicos": ["CSS Modules", "Styled Components básico", "Tailwind CSS", "Temas"] }
+          ]
+        },
+        "intermediario": {
+          "duracao": "6 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Hooks Essenciais", "topicos": ["useEffect", "useContext", "useRef", "useMemo e useCallback"] },
+            { "numero": 2, "titulo": "Gerenciamento de Estado", "topicos": ["Context API", "Zustand", "Redux Toolkit básico", "React Query"] },
+            { "numero": 3, "titulo": "Roteamento", "topicos": ["React Router v6", "Rotas protegidas", "Parâmetros de rota", "Navegação programática"] },
+            { "numero": 4, "titulo": "Consumo de APIs", "topicos": ["Fetch e Axios", "Loading states", "Tratamento de erros", "Paginação"] },
+            { "numero": 5, "titulo": "Testes com Testing Library", "topicos": ["Render e queries", "Eventos de usuário", "Mocking de APIs", "Acessibilidade"] },
+            { "numero": 6, "titulo": "Projeto Integrador", "topicos": ["Aplicação CRUD completa", "Autenticação", "Deploy na Vercel"] }
+          ]
+        },
+        "avancado": {
+          "duracao": "8 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Performance em React", "topicos": ["Reconciliation", "React.memo", "Virtualização de listas", "Code splitting"] },
+            { "numero": 2, "titulo": "Padrões Avançados", "topicos": ["Compound Components", "Render Props", "HOCs", "Custom Hooks avançados"] },
+            { "numero": 3, "titulo": "Next.js", "topicos": ["SSR e SSG", "App Router", "Server Components", "API Routes"] },
+            { "numero": 4, "titulo": "Formulários Complexos", "topicos": ["React Hook Form", "Zod e validação", "Formulários dinâmicos", "Upload de arquivos"] },
+            { "numero": 5, "titulo": "Acessibilidade e UX", "topicos": ["ARIA roles", "Foco e teclado", "Screen readers", "Design system"] },
+            { "numero": 6, "titulo": "Micro-frontends", "topicos": ["Module Federation", "Single-SPA", "Comunicação entre apps", "Deploy independente"] },
+            { "numero": 7, "titulo": "Testes Avançados", "topicos": ["E2E com Playwright", "Visual regression", "Performance testing", "Contract testing"] },
+            { "numero": 8, "titulo": "Projeto Final", "topicos": ["Aplicação enterprise", "Design system próprio", "CI/CD completo", "Monitoramento"] }
+          ]
+        }
+      }
+    },
+    {
+      "id": "node",
+      "nome": "Node.js",
+      "descricao": "Desenvolva backends escaláveis com Node.js, Express, APIs REST e integração com bancos de dados.",
+      "niveis": {
+        "iniciante": {
+          "duracao": "4 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Fundamentos do Node.js", "topicos": ["O que é Node.js", "Event loop", "Módulos CommonJS", "npm e package.json"] },
+            { "numero": 2, "titulo": "Sistema de Arquivos e HTTP", "topicos": ["Módulo fs", "Módulo path", "HTTP nativo", "Criando um servidor simples"] },
+            { "numero": 3, "titulo": "Express.js Básico", "topicos": ["Instalação e setup", "Rotas GET e POST", "Middlewares", "Servindo arquivos estáticos"] },
+            { "numero": 4, "titulo": "Banco de Dados com MongoDB", "topicos": ["MongoDB Atlas", "Mongoose básico", "CRUD com Mongoose", "Validações"] }
+          ]
+        },
+        "intermediario": {
+          "duracao": "6 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "APIs RESTful", "topicos": ["Boas práticas REST", "Status codes HTTP", "Versionamento de API", "Documentação com Swagger"] },
+            { "numero": 2, "titulo": "Autenticação e Autorização", "topicos": ["JWT", "bcrypt", "Refresh tokens", "RBAC básico"] },
+            { "numero": 3, "titulo": "Banco de Dados Relacional", "topicos": ["PostgreSQL com Prisma", "Migrações", "Relacionamentos", "Transações"] },
+            { "numero": 4, "titulo": "Testes", "topicos": ["Jest no Node", "Supertest", "Mocking de banco", "TDD básico"] },
+            { "numero": 5, "titulo": "Segurança e Validação", "topicos": ["Helmet.js", "Rate limiting", "Joi/Zod validation", "CORS"] },
+            { "numero": 6, "titulo": "Projeto Integrador", "topicos": ["API REST completa", "Autenticação JWT", "Deploy no Railway"] }
+          ]
+        },
+        "avancado": {
+          "duracao": "8 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Arquitetura Limpa", "topicos": ["Clean Architecture no Node", "Repositórios e casos de uso", "Inversão de dependências", "DDD"] },
+            { "numero": 2, "titulo": "Microserviços", "topicos": ["Comunicação entre serviços", "Message brokers (RabbitMQ)", "Service discovery", "API Gateway"] },
+            { "numero": 3, "titulo": "Performance e Escalabilidade", "topicos": ["Clustering", "Caching com Redis", "Filas de trabalho", "Load balancing"] },
+            { "numero": 4, "titulo": "WebSockets e Tempo Real", "topicos": ["Socket.io", "Salas e namespaces", "Autenticação em WS", "Scaling de WS"] },
+            { "numero": 5, "titulo": "GraphQL", "topicos": ["Apollo Server", "Resolvers e schemas", "DataLoader", "Subscriptions"] },
+            { "numero": 6, "titulo": "Observabilidade", "topicos": ["Logging com Pino/Winston", "Métricas com Prometheus", "Tracing com OpenTelemetry", "Dashboards"] },
+            { "numero": 7, "titulo": "DevOps", "topicos": ["Docker multi-stage", "Kubernetes básico", "CI/CD completo", "Secrets management"] },
+            { "numero": 8, "titulo": "Projeto Final", "topicos": ["Sistema de microserviços", "Monitoramento completo", "Testes de carga", "Apresentação"] }
+          ]
+        }
+      }
+    },
+    {
+      "id": "devops",
+      "nome": "DevOps",
+      "descricao": "Domine práticas de DevOps com Docker, CI/CD, Kubernetes e cultura de colaboração entre Dev e Ops.",
+      "niveis": {
+        "iniciante": {
+          "duracao": "4 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Fundamentos de Linux", "topicos": ["Comandos essenciais", "Permissões de arquivo", "Processos e serviços", "Shell scripting básico"] },
+            { "numero": 2, "titulo": "Git e Versionamento", "topicos": ["Git flow", "Branching strategies", "Pull requests", "Conventional commits"] },
+            { "numero": 3, "titulo": "Docker Básico", "topicos": ["Containers vs VMs", "Dockerfile", "docker-compose", "Volumes e redes"] },
+            { "numero": 4, "titulo": "CI/CD Básico", "topicos": ["O que é CI/CD", "GitHub Actions básico", "Pipeline simples", "Testes automatizados no pipeline"] }
+          ]
+        },
+        "intermediario": {
+          "duracao": "6 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Docker Avançado", "topicos": ["Multi-stage builds", "Otimização de imagens", "Docker Hub", "Registry privado"] },
+            { "numero": 2, "titulo": "Infraestrutura como Código", "topicos": ["Terraform básico", "Ansible", "Gerenciamento de estado", "Módulos reutilizáveis"] },
+            { "numero": 3, "titulo": "Kubernetes Básico", "topicos": ["Pods e Deployments", "Services e Ingress", "ConfigMaps e Secrets", "kubectl"] },
+            { "numero": 4, "titulo": "Monitoramento", "topicos": ["Prometheus", "Grafana", "Alertas", "Logs centralizados com ELK"] },
+            { "numero": 5, "titulo": "Segurança em DevOps", "topicos": ["Secrets management", "Scan de vulnerabilidades", "SAST/DAST", "Políticas de acesso"] },
+            { "numero": 6, "titulo": "Projeto Integrador", "topicos": ["Pipeline completo", "Deploy em nuvem", "Monitoramento configurado"] }
+          ]
+        },
+        "avancado": {
+          "duracao": "8 semanas",
+          "modulos": [
+            { "numero": 1, "titulo": "Kubernetes Avançado", "topicos": ["Helm charts", "Operators", "HPA e VPA", "Service mesh com Istio"] },
+            { "numero": 2, "titulo": "GitOps", "topicos": ["ArgoCD", "Flux", "GitOps principles", "Rollbacks automáticos"] },
+            { "numero": 3, "titulo": "Cloud Nativa", "topicos": ["AWS/GCP/Azure essencials", "Serverless", "Managed Kubernetes", "Cost optimization"] },
+            { "numero": 4, "titulo": "Observabilidade Avançada", "topicos": ["Distributed tracing", "SLOs e SLAs", "Chaos engineering", "Incident management"] },
+            { "numero": 5, "titulo": "Segurança Avançada", "topicos": ["Zero-trust network", "OPA e Gatekeeper", "Compliance as code", "Penetration testing"] },
+            { "numero": 6, "titulo": "Platform Engineering", "topicos": ["Internal developer platform", "Backstage", "Golden paths", "Self-service infra"] },
+            { "numero": 7, "titulo": "FinOps", "topicos": ["Cloud cost management", "Reserved instances", "Rightsizing", "Cost allocation"] },
+            { "numero": 8, "titulo": "Projeto Final", "topicos": ["Plataforma completa", "Runbooks", "SRE practices", "Apresentação"] }
+          ]
+        }
+      }
+    }
+  ]
+}
