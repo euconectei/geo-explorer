@@ -34,9 +34,11 @@ Comandos disponíveis:
       Ex: /desafio javascript iniciante
           /desafio react intermediario
 
-  /certificado <tecnologia> <nivel> "<nome>"
+  /certificado <tecnologia> <nivel> "<nome>" [--pdf]
       Gera um certificado fictício de conclusão.
+      Use --pdf para também salvar o certificado como arquivo PDF em certificados/.
       Ex: /certificado python avancado "Maria Silva"
+          /certificado react iniciante "João Santos" --pdf
 
   --help | -h
       Exibe esta mensagem de ajuda.
@@ -64,9 +66,21 @@ switch (comando) {
   case '/certificado': {
     const tecnologia = args[1];
     const nivel = args[2];
-    // Nome pode ter espaços e vir entre aspas — já é resolvido pelo shell
-    const nome = args.slice(3).join(' ').replace(/^["']|["']$/g, '');
-    console.log(comandoCertificado(tecnologia, nivel, nome));
+    const restArgs = args.slice(3).filter(a => a !== '--pdf');
+    const nome = restArgs.join(' ').replace(/^["']|["']$/g, '');
+    const gerarPdf = args.includes('--pdf');
+
+    const resultado = comandoCertificado(tecnologia, nivel, nome, { pdf: gerarPdf });
+
+    // comandoCertificado retorna Promise quando --pdf está ativo
+    if (resultado && typeof resultado.then === 'function') {
+      resultado.then(texto => console.log(texto)).catch(err => {
+        console.error('❌ Erro ao gerar PDF:', err.message);
+        process.exit(1);
+      });
+    } else {
+      console.log(resultado);
+    }
     break;
   }
 

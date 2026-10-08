@@ -1,4 +1,5 @@
 import { buscarTrilha, normalizarNivel } from '../utils/loader.js';
+import { gerarPDF } from '../utils/pdfGenerator.js';
 
 /**
  * Comando /certificado
@@ -7,9 +8,11 @@ import { buscarTrilha, normalizarNivel } from '../utils/loader.js';
  * @param {string} tecnologia - id da trilha (ex: javascript, python)
  * @param {string} nivel - nível concluído (iniciante, intermediario, avancado)
  * @param {string} nomeAluno - nome da pessoa que concluiu a trilha
- * @returns {string} - certificado formatado em texto
+ * @param {Object} [opcoes]
+ * @param {boolean} [opcoes.pdf] - se true, também gera arquivo PDF
+ * @returns {string|Promise<string>} - certificado formatado em texto (ou Promise se --pdf)
  */
-export function comandoCertificado(tecnologia, nivel, nomeAluno) {
+export function comandoCertificado(tecnologia, nivel, nomeAluno, opcoes = {}) {
   if (!tecnologia || !nivel || !nomeAluno) {
     return gerarAjudaCertificado();
   }
@@ -27,8 +30,40 @@ export function comandoCertificado(tecnologia, nivel, nomeAluno) {
     ].join('\n');
   }
 
-  const dados = trilha.niveis[nivelNorm];
-  return gerarCertificado(nomeAluno, trilha, nivelNorm, dados);
+  const dadosNivel = trilha.niveis[nivelNorm];
+  const textoCertificado = gerarCertificado(nomeAluno, trilha, nivelNorm, dadosNivel);
+
+  if (!opcoes.pdf) {
+    return textoCertificado;
+  }
+
+  // Modo PDF: gera o arquivo e retorna Promise
+  return gerarCertificadoPDF(nomeAluno, trilha, nivelNorm, dadosNivel).then(caminho => {
+    return textoCertificado + `\n\n📄 PDF gerado com sucesso!\n   📁 ${caminho}`;
+  });
+}
+
+/**
+ * Monta o objeto de dados e chama o gerador de PDF
+ */
+function gerarCertificadoPDF(nomeAluno, trilha, nivel, dadosNivel) {
+  const dataFormatada = new Date().toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
+
+  return gerarPDF({
+    nomeAluno,
+    nomeTrilha: trilha.nome,
+    nivel,
+    duracao: dadosNivel.duracao,
+    qtdModulos: dadosNivel.modulos.length,
+    modulos: dadosNivel.modulos.map(m => m.titulo),
+    cargaHoraria: calcularCargaHoraria(dadosNivel.duracao, dadosNivel.modulos.length),
+    dataEmissao: dataFormatada,
+    codigo: gerarCodigoCertificado(nomeAluno, trilha.id, nivel),
+  });
 }
 
 /**

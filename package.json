@@ -12,10 +12,17 @@
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch",
     "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
+    "pdf:diagnostico": "node tests/pdf-diagnostico.js",
     "mcp:build": "cd mcp-server && npm install && npm run build",
     "mcp:start": "node mcp-server/build/index.js"
   },
-  "keywords": ["trilhas", "aprendizagem", "geo-explorer", "mcp", "cli"],
+  "keywords": [
+    "trilhas",
+    "aprendizagem",
+    "geo-explorer",
+    "mcp",
+    "cli"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
@@ -24,6 +31,14 @@
   "jest": {
     "transform": {},
     "testEnvironment": "node",
-    "testMatch": ["**/tests/**/*.test.js"]
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "dependencies": {
+    "pdfkit": "^0.20.2"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }
